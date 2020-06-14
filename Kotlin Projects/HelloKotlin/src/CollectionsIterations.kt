@@ -4,6 +4,10 @@ fun sayHello(greeting:String, itemToGreet:List<String>){
         //itemToGreet is defined in the main function
         println("$greeting $itemToGreet")
     }
+
+    //You can also use vararg to use a variable number of string arguments e.g.
+    //fun sayhello(greeting:String, vararg itemtoGreet:String)
+    //if nothing is used after the greeting parameter it will assume the second parameter is a empty array. it also allows you to make a new array from this
 }
 //start going down here before top function
 fun main(){
@@ -59,5 +63,10 @@ fun main(){
     //Now lets use it with a function the function that this will work with has already been pre called above
     sayHello("Hello", otherFunctionList)
     //This can be used with an array but will have to be defined in function parameters
+    //This is how you get around that:
+    //first you make the parameters in the fun you want to be an array a vararg e.g. vararg itemstoGreet:String
+    //then you call the fucntion the same in this style sayHello(greeting "Hello", *interestingThings)
+    //This will allow the function to work with an array.
+
 
 }
